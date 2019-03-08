@@ -41,6 +41,7 @@ require (
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/json-iterator/go v1.1.5 // indirect
+	github.com/kubernetes-csi/csi-test v1.0.3
 	github.com/mailru/easyjson v0.0.0-20180730094502-03f2033d19d5 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect

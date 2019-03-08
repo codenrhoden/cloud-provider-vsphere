@@ -17,13 +17,35 @@ limitations under the License.
 package test
 
 import (
-	"testing"
+	"fmt"
+	"io/ioutil"
+	"os"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
 
+var (
+	tempDir string
+	w       = GinkgoWriter
+)
+
+/*
 func TestCSI(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "CSI Suite")
-}
+}*/
+
+var _ = BeforeSuite(func() {
+	var err error
+	tempDir, err = ioutil.TempDir("", "csi-test")
+	Ω(err).ShouldNot(HaveOccurred())
+	fmt.Fprintf(w, "created temp dir: %s\n", tempDir)
+})
+
+var _ = AfterSuite(func() {
+	var err error
+	err = os.Remove(tempDir)
+	Ω(err).ShouldNot(HaveOccurred())
+	fmt.Fprintf(w, "deleted temp dir: %s\n", tempDir)
+})

@@ -105,7 +105,7 @@ $(DIST_CCM_ZIP): $(CCM_BIN)
 	zip -j $@ README.md LICENSE "$${_temp_dir}/$(CCM_BIN_NAME)" && \
 	rm -fr "$${_temp_dir}"
 
-dist-ccm: dist-ccm-tgz dist-ccm-zip 
+dist-ccm: dist-ccm-tgz dist-ccm-zip
 
 DIST_CSI_NAME := vsphere-csi-$(VERSION)
 DIST_CSI_TGZ := $(DIST_CSI_NAME)-$(GOOS)_$(GOARCH).tar.gz
@@ -122,7 +122,7 @@ $(DIST_CSI_ZIP): $(CSI_BIN)
 	zip -j $@ README.md LICENSE "$${_temp_dir}/$(CSI_BIN_NAME)" && \
 	rm -fr "$${_temp_dir}"
 
-dist-csi: dist-csi-tgz dist-csi-zip 
+dist-csi: dist-csi-tgz dist-csi-zip
 
 dist: dist-ccm dist-csi
 
